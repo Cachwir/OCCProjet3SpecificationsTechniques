@@ -1,0 +1,223 @@
+/* HEADER */
+.header_promo {
+    text-transform: uppercase;
+    font-family: "Passion One", sans-serif;
+    font-size: 30px;
+    color: white;
+}
+
+.header_promo img {
+    max-height: 60px;
+}
+
+/* INTRODUCTION BLOCK */
+
+.top_promo_block {
+    background: url(../img/intro-bg-2.jpg);
+    background-size: cover;
+    position: relative;
+    min-height: 650px;
+}
+
+.top_promo_block:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.top_promo_header {
+    position: relative;
+    z-index: 1;
+}
+
+.btn_promo_search button {
+    margin-left: 0 !important;
+}
+
+.scroll_block img {
+    margin: 0 5%;
+    float: right;
+}
+
+/* SLIDER NAV */
+
+.slider-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
+.slider-nav-container .slider-nav {
+    display: block;
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.5);
+    font-size: 36px;
+    line-height: 60px;
+    padding: 10px;
+    transition: 0.5s;
+    width: 25%;
+    text-align: center;
+}
+.slider-nav-container .slider-nav.active, .slider-nav-container .slider-nav:hover {
+    background-color: rgba(231, 57, 49, 0.8);
+    color: #333;
+    transition: 0.5s;
+}
+
+/* SLIDER */
+
+.promo_block#block_films {
+    padding: 0;
+}
+
+.slider-container {
+    position: relative;
+}
+
+.rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.rslides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.rslides li:first-child {
+    position: relative;
+    display: block;
+    float: left;
+}
+.rslides .slide-content {
+    position: relative;
+    float: left;
+    width: 100%;
+    border: 0;
+    color: white;
+}
+
+.rslides .slide-content .films-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.rslides .slide-content .films-container .film {
+    position: relative;
+    width: 33.33%;
+}
+
+.rslides .slide-content .films-container .film img {
+    width: 100%;
+    height: 100%;
+}
+
+.rslides .slide-content .films-container .film .projection-time{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 2;
+}
+
+.rslides .slide-content .films-container .film .film-content {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+    opacity: 0.01;
+    transition: opacity 0.5s;
+}
+
+.rslides .slide-content .films-container .film:hover .film-content {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.rslides .slide-content .films-container .film .film-content .film-meta {
+    height: calc(100% - 175px);
+    overflow-y: auto;
+}
+
+.rslides .slide-content .films-container .film .film-content .film-title {
+    font-size: 30px;
+}
+
+.rslides .slide-content .films-container .film .film-content .separator {
+    display: block;
+    width: 30%;
+    height: 1px;
+    background: #E73931;
+    margin: 20px auto;
+}
+
+.rslides .slide-content .films-container .film .film-content .film-author {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.rslides .slide-content .films-container .film .film-content .film-subscribe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rslides .slide-content .films-container .film .film-content .subscribe_btn {
+    display: inline-block;
+    font-size: 16px;
+    border: 2px solid;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 3px;
+}
+.rslides .slide-content .films-container .film .film-content .subscribe_btn:hover {
+    color: rgba(231, 57, 49, 1);
+    border-color: rgba(231, 57, 49, 1);
+}
+.rslides .slide-content .films-container .film .film-content .subscribe_btn.clicked {
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .tp-banner-container {
+        display: block !important; /* Because that f***ing theme isn't responsive despite his ad saying IT's responsive */
+        height: 100%;
+    }
+
+    .tp-banner {
+        height: 100% !important;
+    }
+}
