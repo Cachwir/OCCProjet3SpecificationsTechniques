@@ -211,13 +211,48 @@
     }
 }
 
-@media (max-width: 768px) {
-    .tp-banner-container {
-        display: block !important; /* Because that f***ing theme isn't responsive despite his ad saying IT's responsive */
-        height: 100%;
-    }
+/* ABOUT US */
 
-    .tp-banner {
-        height: 100% !important;
-    }
+.promo_block p {
+    display: block;
+    font-size: 50px;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 80px;
+}
+
+.promo_block .small-span {
+    font-size: 30px;
+    max-width: 1100px;
+    line-height: 50px;
+}
+
+.block_low_padding {
+    padding: 20px 0;
+}
+
+/* SOCIAL BUTTONS */
+
+.text-right {
+    text-align: right;
+}
+
+.social-button {
+    display: inline-block;
+    padding: 7px;
+    font-size: 22px;
+    width: 39px;
+    text-align: center;
+    color: #e73931;
+    border: 1px solid #e73931;
+    border-radius: 100%;
+    transition: color 0.5s, border-color 0.5s;
+    margin: 0 5px;
+}
+.social-button:hover {
+    color: #1d142b;
+    border-color: #1d142b;
+    transition: color 0.5s, border-color 0.5s;
 }

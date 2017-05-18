@@ -304,10 +304,25 @@ Avec cette singulière maturité qu’on acquiert trop tôt dans l’adversité,
     <!--promo block-->
     <div class="promo_block container-fluid">
         <div class="fixed_w promka">
-            <img src="theme/01.Default/html/img/start/logo.png" alt="#">
-            <span>See and visit interesting places. Share experiences with your friends. Simply</span>
+            <p>Qui sommes-nous ?</p>
+            <br><br>
+            <span class="small-span">
+                Derrière le festival se trouve l'association "Les Films de Plein Air", créée le 24 Février 2017.<br>
+                Notre objectif est de permettre aux gens de se rapprocher en se réappropriant l'espace public dans une ambiance de convivialité, autour de films d'auteurs de tous genres.
+            </span>
         </div>
         <div class="anim_bg"></div>
+    </div>
+
+    <div class="places_index_block block_low_padding container-fluid text-right">
+        <div class="fixed_w promka">
+            <a href="https://www.facebook.com/FestivalDuFilmCourt" target="_blank">
+                <i class="fa fa-facebook social-button" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com/cinemathequeG" target="_blank">
+                <i class="fa fa-twitter social-button" aria-hidden="true"></i>
+            </a>
+        </div>
     </div>
 
 </div>
