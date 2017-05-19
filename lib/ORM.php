@@ -170,6 +170,11 @@ abstract class ORM {
 		}
 	}
 
+	public function delete() {
+        $pdo = PDOWrapper::get();
+        $pdo->exec("DELETE FROM ". static::$tableName . " WHERE id = :id", [":id" => $this->get("id")]);
+    }
+
 	public function isHashed($mail_field) {
 		return is_sha1($this->get($mail_field));
 	}

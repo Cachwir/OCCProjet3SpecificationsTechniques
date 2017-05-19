@@ -21,9 +21,10 @@ if ($action == "add_participation")
         if (!in_array($id, $session_participations)) {
             $Film = Film::addParticipation($id);
             $session_participations[] = $id;
+            $_SESSION["participations"] = $session_participations;
         }
     } catch (\Exception $e) {
-        if (Config::$config['debug']) {
+        if (Config::get()['debug']) {
             throw $e;
         } else {
             echo "Une erreur est survenue";
@@ -32,5 +33,7 @@ if ($action == "add_participation")
 
     die;
 }
+
+$Ads = Ad::findByLast();
 
 include_once(__DIR__. "/../views/view.php");

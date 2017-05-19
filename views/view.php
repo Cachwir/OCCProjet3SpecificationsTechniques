@@ -301,6 +301,38 @@ Avec cette singulière maturité qu’on acquiert trop tôt dans l’adversité,
         </div>
     </div>
 
+    <?php if (!empty($Ads)): ?>
+        <div class="places_index_block block_no_padding container-fluid" id="news">
+
+            <div class="place_li_cont">
+
+                <!--Blog post style one-->
+                <div class="post p_style_one">
+
+                    <h1>Actualités</h1>
+
+                    <?php foreach($Ads as $Ad): ?>
+                        <div class="post_info">
+                            <h3><a href="#"><?php echo htmlspecialchars($Ad->get('title')); ?><span></span></a></h3>
+                            <div class="p_text">
+                                <?php echo nl2br(htmlspecialchars($Ad->get('content'))); ?>
+                            </div>
+                            <div class="p_footer">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-calendar"></i>Le <?php echo date("d/m/Y à H:i:s", $Ad->get("date")); ?></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+
+                    <!--morebtn-->
+                    <a href="#" class="more_btn">Afficher plus d'actualités</a>
+                </div>
+
+            </div>
+        </div>
+    <?php endif; ?>
+
     <!--promo block-->
     <div class="promo_block container-fluid">
         <div class="fixed_w promka">
@@ -397,6 +429,40 @@ Avec cette singulière maturité qu’on acquiert trop tôt dans l’adversité,
             var activeIndex = <?php echo array_search(date("d/m"), array_keys($festival_films)); ?>;
             $($('.slider-nav')[activeIndex]).click();
         <?php endif; ?>
+
+        var $posts = $("#news .post_info"),
+            $moreButton = $(".more_btn"),
+            nb_posts_shown = 2;
+        
+        if ($posts.length <= nb_posts_shown) {
+            $moreButton.hide();
+        }
+
+        $.each($posts, function(index, post) {
+            if (index >= nb_posts_shown) {
+                $(post).hide();
+            }
+        });
+
+        $moreButton.click(function(e) {
+            e.preventDefault();
+            var nb_shown = 0;
+            var last_shown_index = 0;
+            $.each($posts, function(index, post) {
+                if (nb_shown < 2 && $(post).is(":hidden")) {
+                    $(post).show();
+                    nb_shown++;
+                    last_shown_index = index;
+                }
+            });
+            if (last_shown_index + 1 === $posts.length) {
+                $moreButton.hide();
+            }
+        });
+
+        $("a[href='#']").click(function(e) {
+            e.preventDefault();
+        });
     }); //ready
 </script>
 
