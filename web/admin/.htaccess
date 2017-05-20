@@ -1,4 +1,4 @@
-#AuthUserFile /var/www/occ/projectfolder/.htpasswd_admin
+#AuthUserFile /var/www/html/occ/filmsenpleinair/.htpasswd_admin
 #AuthGroupFile /dev/null
 #AuthName "Restricted Access"
 #AuthType Basic
